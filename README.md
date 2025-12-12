@@ -23,6 +23,28 @@ Maka aplikasikan algoritma untuk menyelesaikan masalah di atas ke dalam sebuah p
 
 #### Penjelasan Program:
 
+Program membuat papan catur 8 x 8, tiap kotaknya ditandai -1 yang berarti belum dikunjungi dan akan berubah menjadi 0 jika sudah dikunjungi. Kuda diletakkan di posisi awal (start_x, start_y) dan setiap langkah berikutnya ditentukan dengan mencari kotak-kotak yang dapat dicapai kuda dengan pergerakan L. Dari kotak-kotak tersebut dipilih yang memiliki degree paling kecil atau jumlah langkah valid dari kotak tersebut (Warnsdorff). Proses terus diulang, jika menemukan kebuntuan akan melakukan backtrack. 
+Tur dianggap berhasil jika semua 64 kotak telah dikunjungi. Terdapat 2 jenis tur; open dan closed (ini dapat diubah pada bagian mode). Tur dapat berhenti di kotak manapun pada open tour, sedangkan pada closed tour harus berhenti di kotak posisi awal kuda.
+
+Contoh Input
+```sh
+start_x, start_y = 1, 2
+mode = "open"
+```
+
+Contoh Output
+```sh
+Knight's Tour (OPEN):
+
+[1, 22, 3, 18, 43, 38, 13, 16]
+[4, 19, 0, 39, 14, 17, 44, 37]
+[23, 2, 21, 42, 45, 50, 15, 12]
+[20, 5, 58, 49, 40, 47, 36, 51]
+[61, 24, 41, 46, 57, 52, 11, 32]
+[6, 27, 62, 59, 48, 33, 54, 35]
+[25, 60, 29, 8, 53, 56, 31, 10]
+[28, 7, 26, 63, 30, 9, 34, 55]
+```
 
 ## Praktikum 2 - Largest Monotonically Increasing Subsequence
 
