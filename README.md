@@ -24,6 +24,7 @@ Maka aplikasikan algoritma untuk menyelesaikan masalah di atas ke dalam sebuah p
 #### Penjelasan Program:
 
 Program membuat papan catur 8 x 8, tiap kotaknya ditandai -1 yang berarti belum dikunjungi dan akan berubah menjadi 0 jika sudah dikunjungi. Kuda diletakkan di posisi awal (start_x, start_y) dan setiap langkah berikutnya ditentukan dengan mencari kotak-kotak yang dapat dicapai kuda dengan pergerakan L. Dari kotak-kotak tersebut dipilih yang memiliki degree paling kecil atau jumlah langkah valid dari kotak tersebut (Warnsdorff). Proses terus diulang, jika menemukan kebuntuan akan melakukan backtrack. 
+
 Tur dianggap berhasil jika semua 64 kotak telah dikunjungi. Terdapat 2 jenis tur; open dan closed (ini dapat diubah pada bagian mode). Tur dapat berhenti di kotak manapun pada open tour, sedangkan pada closed tour harus berhenti di kotak posisi awal kuda.
 
 Contoh Input
@@ -52,7 +53,25 @@ Knight's Tour (OPEN):
 Implementasikan sebuah program untuk menyelesaikan permasalahan Largest Monotonically Increasing Subsequence.
 
 ![Image](https://github.com/user-attachments/assets/96ffa51c-0555-4a63-b398-10f13e51f5fe)
+
 Aplikasi tree untuk mencari Largest Monotonically Increasing Subsequence dari urutan bilangan :
 4, 1, 13, 7, 0, 2, 8, 11, 3
 
 #### Penjelasan Program:
+
+Largest Monotonically Increasing Subsequence adalah subsekuens meningkat paling panjang sesuai urutan bilangan yang diberikan. Program menyimpan urutan bilangan dalam array kemudian mencoba tiap bilangan tersebut sebagai titik awal. Rekursi DFS dilakukan pada tiap titik atau elemen awal untuk mencari dan menemukan semua bilangan setelahnya yang nilainya lebih besar. 
+
+Dari situ terbentuklah urutan bilangan (subsekuens) yang meningkat, dan tiap kali ada subsekuens yang lebih panjang dari subsekuens sebelumnya, program menyimpan subsekuens tersebut dan panjangnya. Proses ini terus diulang sampai semua bilangan ditelusuri.
+
+Contoh Input (array pada soal dan kode)
+```sh
+4 1 13 7 0 2 8 11 3
+```
+
+Contoh Output
+```sh
+Array: 4 1 13 7 0 2 8 11 3 
+
+Largest Monotonically Increasing Subsequence: 4 7 8 11 
+Panjang LIS = 4
+```
